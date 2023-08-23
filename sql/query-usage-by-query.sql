@@ -24,4 +24,5 @@ SELECT
     query_text,
     SUM(query_cost) AS total_query_cost_last_30d
 FROM queries
-GROUP BY 1
+GROUP BY query_text
+ORDER BY total_query_cost_last_30d DESC
